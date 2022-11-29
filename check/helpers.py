@@ -16,17 +16,19 @@ import platform
 import re
 import sys
 
+
 def header(title):
-    """Print title in between 2 lines of 72 "-"
-    """
+    """Print title in between 2 lines of 72 "-" """
     print(72*"-")
     print(title)
     print(72*"-")
 
 
 def get_kernel_config_info():
-    """Scan through specific modules for zone arguments
-       using the the config file/s,
+    """ Find zone arguments
+
+    Scan through specific modules for zone arguments
+    using the the config file/s,
     """
     long_uname = platform.uname()
     printed_kernel_version = long_uname.release.strip('.#')
@@ -50,13 +52,13 @@ def get_kernel_config_info():
 
 
 def get_distro_general_information():
-    """
-            Check the distro to use os-release for pretty name
-            a) Checks to see if the file exits in either location
-            b) When found strip the whitespace skip the commented lines
-            c) Match the pattern that is being asked in the pretty name
-               using regex
-            d) if no matched are found show the unmatched lines.
+    """Check the distro to use os-release for pretty name
+
+    a) Checks to see if the file exits in either location
+    b) When found strip the whitespace skip the commented lines
+    c) Match the pattern that is being asked in the pretty name
+    using regex
+    d) if no matched are found show the unmatched lines.
     """
     try:
         file_name = '/etc/os-release'
@@ -79,8 +81,9 @@ def get_distro_general_information():
 
 
 def get_kernel_general_information():
-    """ Kernel Version information formatted, and determine if the
-        system kernel is supported.
+    """ Kernel Version information.
+
+    Formatted, and determine if the system kernel is supported.
     """
     characters = 4
     uname = platform.uname()

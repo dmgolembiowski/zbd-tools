@@ -14,9 +14,9 @@ import shutil
 import stat
 
 def install_checker():
-    """
-    Install the zbc-check script to usr/bin
-    Then install this helper modules to /use/share/zbd-tools
+    """ Install the zbc-check script to usr/sbin
+
+    Then install this helper modules to /usr/share/zbd-tools
     """
     path = '/usr/sbin/zbd-check'
     directory_name = 'zbd-tools'
